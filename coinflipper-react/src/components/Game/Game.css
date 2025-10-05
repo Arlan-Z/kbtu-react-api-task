@@ -1,0 +1,35 @@
+.game-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.score-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 150px;
+}
+
+.score-box h1 {
+    color: #302b27;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.score-box p {
+    color: #8acb88;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.buttons-box {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+}

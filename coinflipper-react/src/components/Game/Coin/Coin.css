@@ -10,14 +10,23 @@
     width: 200px;          
     aspect-ratio: 1 / 1;   
     border-radius: 50%;
-    background-color: #AEC3B0;
-    border: 4px solid #124559;
-}
-
-.buttons-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    gap: 50px;
 }
+
+.coin.win {
+    background-color: #ffc373;
+    border: 6px solid #ffa200;
+}
+
+.coin.lose {
+    background-color: #9999a1;
+    border: 6px solid #66666e;
+}
+
+.coin img {
+    width: 72px;
+    opacity: 0.4;
+}
+
