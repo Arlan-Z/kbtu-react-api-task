@@ -4,4 +4,13 @@
     align-items: center;
     flex-direction: row;
     width: 500px;
+
+    background-color: #b8b8b486;
+    box-sizing: border-box;
+    padding: 0 24px;
+    border-radius: 5px;
+}
+
+.record-row-wrapper p {
+    text-transform: uppercase;
 }

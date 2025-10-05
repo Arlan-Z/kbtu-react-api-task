@@ -1,15 +1,22 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Coin, { type CoinHandle } from "./Coin/Coin";
 import CoinButton from "./Coin/CoinButton/CoinButton";
 import './Game.css';
 
-const score = 0;
-
 export default function Game() {
     const coinRef = useRef<CoinHandle>(null);
+    const [score, setScore] = useState<number>(0);
 
     const handleFlip = () => {
-        coinRef.current?.flipCoin();
+        const isWin = Math.random() > 0.5;
+
+        coinRef.current?.flipCoin(isWin);
+
+        if (isWin) {
+            setScore(prev => prev + 1);
+        } else {
+            setScore(0);
+        }
     }
 
     return <div className="game-wrapper">

@@ -7,7 +7,7 @@ const Coin = forwardRef((_, ref) => {
     const [isWin, setIsWin] = useState(false);
 
     useImperativeHandle(ref, () => ({
-        flipCoin: () => setIsWin(Math.random() > 0.5)
+        flipCoin: (isWin : boolean) => setIsWin(isWin)
     }));
 
     return (
@@ -20,5 +20,5 @@ const Coin = forwardRef((_, ref) => {
 export default Coin;
 
 export interface CoinHandle {
-    flipCoin: () => void;
+    flipCoin: (isWin: boolean) => void;
 }
