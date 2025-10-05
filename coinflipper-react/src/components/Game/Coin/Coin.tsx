@@ -1,13 +1,24 @@
+import { forwardRef, useState, useImperativeHandle } from "react";
 import Crown from "../../../assets/crown.png"
 import Skull from "../../../assets/skull.png"
 import './Coin.css';
 
-const isWin = false;
+const Coin = forwardRef((_, ref) => {
+    const [isWin, setIsWin] = useState(false);
 
-export default function Coin() {
-    return <div className="coin-wrapper">
-        <div className={`coin ${isWin ? "win" : "lose"}`}> 
-            <img src={isWin ? Crown : Skull} alt="crown-pic" />
+    useImperativeHandle(ref, () => ({
+        flipCoin: () => setIsWin(Math.random() > 0.5)
+    }));
+
+    return (
+        <div className={`coin ${isWin ? "win" : "lose"}`}>
+        <img src={isWin ? Crown : Skull} alt="coin-pic" />
         </div>
-    </div>
+    );
+});
+
+export default Coin;
+
+export interface CoinHandle {
+    flipCoin: () => void;
 }

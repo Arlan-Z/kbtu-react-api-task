@@ -11,4 +11,37 @@ button.coin-btn {
     font-weight: 600;
     border-radius: 5px;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+button.coin-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+button.coin-btn:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+button.coin-btn {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+button.coin-btn:disabled {
+    filter: saturate(0);
+    color: rgb(184, 184, 184);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.6;
 }
