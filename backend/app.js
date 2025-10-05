@@ -1,7 +1,20 @@
 const express = require('express');
 const app = express();
 
-const records = [];
+const records = [
+    {
+        name: 'Arl',
+        score: 3
+    },
+    {
+        name: 'lan',
+        score: 2
+    },
+    {
+        name: 'gul',
+        score: 2
+    },
+];
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); 
