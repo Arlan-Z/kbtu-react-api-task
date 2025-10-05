@@ -1,0 +1,12 @@
+{
+  "name": "my-project",
+  "private": true,
+  "scripts": {
+    "server": "npm run dev --prefix backend",
+    "client": "npm run dev --prefix coinflipper-react",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
