@@ -1,0 +1,23 @@
+.coin-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.coin {
+    width: 200px;          
+    aspect-ratio: 1 / 1;   
+    border-radius: 50%;
+    background-color: #AEC3B0;
+    border: 4px solid #124559;
+}
+
+.buttons-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+}

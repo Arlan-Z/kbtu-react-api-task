@@ -1,0 +1,14 @@
+button.coin-btn {
+    width: 100px;
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
