@@ -4,15 +4,31 @@ import Skull from "../../../assets/skull.png"
 import './Coin.css';
 
 const Coin = forwardRef((_, ref) => {
-    const [isWin, setIsWin] = useState<boolean>(true);
+    const [coinStyles, setCoinStyles] = useState<string>('');
 
     useImperativeHandle(ref, () => ({
-        flipCoin: (isWin : boolean) => setIsWin(isWin)
+        flipCoin: (isWin : boolean) => {
+            setCoinStyles('');
+
+            if (isWin) {
+                setCoinStyles('heads');
+                setTimeout(() => setCoinStyles(''), 3000);
+            } else {
+                setCoinStyles('tails');
+                setTimeout(() => setCoinStyles('back'), 3000);
+            }
+            
+        }
     }));
 
     return (
-        <div className={`coin ${isWin ? "win" : "lose"}`}>
-        <img src={isWin ? Crown : Skull} alt="coin-pic" />
+        <div className={`coin ${coinStyles}`}>
+            <div className="win">
+                <img src={Crown} alt="crown-pic" />
+            </div>
+            <div className="lose">
+                <img src={Skull} alt="skull-pic" />
+            </div>
         </div>
     );
 });
