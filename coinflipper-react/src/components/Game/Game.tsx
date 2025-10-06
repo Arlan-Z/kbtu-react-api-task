@@ -3,7 +3,7 @@ import Coin, { type CoinHandle } from "./Coin/Coin";
 import CoinButton from "./Coin/CoinButton/CoinButton";
 import './Game.css';
 import { postRecord } from "../../services/RecordService";
-import type { Record } from "../../models/record";
+import type { ScoreRecord } from "../../models/record";
 
 export default function Game() {
     const coinRef = useRef<CoinHandle>(null);
@@ -37,7 +37,7 @@ export default function Game() {
             }
         }
         
-        const record: Record = {
+        const record: ScoreRecord = {
             name: name,
             score: score
         };

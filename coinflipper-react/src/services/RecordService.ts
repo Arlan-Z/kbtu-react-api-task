@@ -1,6 +1,6 @@
-import type { Record } from "../models/record";
+import type { ScoreRecord } from "../models/record";
 
-export async function getRecords(): Promise<Record[]> {
+export async function getRecords(): Promise<ScoreRecord[]> {
     try {
         const response = await fetch("/api"); 
         if (!response.ok) throw new Error("Failed to fetch records");
@@ -12,7 +12,7 @@ export async function getRecords(): Promise<Record[]> {
     }
 }
 
-export async function postRecord(record: Record): Promise<boolean> {
+export async function postRecord(record: ScoreRecord): Promise<boolean> {
     try {
         const response = await fetch("/api", {
             method: "POST",
