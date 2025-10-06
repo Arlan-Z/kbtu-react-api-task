@@ -14,7 +14,7 @@ export default function RecordTable() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
                 setVisibleCount(prev => {
                     if (prev < records.length) {
                         return prev + 1; 
@@ -33,7 +33,13 @@ export default function RecordTable() {
             <h1 className="records-title">Leaderboard</h1>
             <div className="records-box">
                 {displayedRecords.map((el, i) => (
-                    <RecordRow key={i} name={el.name} score={el.score} />
+                    <RecordRow 
+                        key={i} 
+                        name={el.name} 
+                        score={el.score} 
+                        style={{ "--i": i } as React.CSSProperties} 
+                        rank={i + 1}
+                    />
                 ))}
             </div>
         </div>
