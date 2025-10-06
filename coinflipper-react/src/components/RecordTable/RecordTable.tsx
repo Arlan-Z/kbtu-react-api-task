@@ -1,18 +1,41 @@
-import { useRecords } from '../../contexts/RecordsContext';
+import { useState, useEffect } from "react";
+import { useRecords } from "../../contexts/RecordsContext";
 import RecordRow from "./RecordRow/RecordRow";
-import './RecordTable.css';
-
+import "./RecordTable.css";
 
 export default function RecordTable() {
     const { records } = useRecords();
+    const [visibleCount, setVisibleCount] = useState(7); 
+    const [displayedRecords, setDisplayedRecords] = useState(records.slice(0, 6));
 
-    return <div className="record-table-wrapper">
-        <h1 className="records-title">Records List</h1>
+    useEffect(() => {
+        setDisplayedRecords(records.slice(0, visibleCount));
+    }, [records, visibleCount]);
 
-        <div className="records-box">
-            {records.map((el, i) => {
-                return <RecordRow name={el.name} score={el.score} key={i}/>
-            })}
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                setVisibleCount(prev => {
+                    if (prev < records.length) {
+                        return prev + 1; 
+                    }
+                    return prev;
+                });
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [records]);
+
+    return (
+        <div className="record-table-wrapper">
+            <h1 className="records-title">Records List</h1>
+            <div className="records-box">
+                {displayedRecords.map((el, i) => (
+                    <RecordRow key={i} name={el.name} score={el.score} />
+                ))}
+            </div>
         </div>
-    </div>
+    );
 }

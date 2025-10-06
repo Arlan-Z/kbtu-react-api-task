@@ -4,6 +4,8 @@
     justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
+    overflow: visible;
+    padding-bottom: 15px;
 }
 
 .records-box {
