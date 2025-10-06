@@ -53,16 +53,18 @@ export default function Game() {
         }
     }
 
-    return <div className="game-wrapper">
-        <div className="score-box">
-            <h1>Score</h1> 
-            <p>{score}</p>
-        </div>
+    return (
+        <div className="game-wrapper">
+            <div className="score-box">
+                <h1>Score</h1> 
+                <p>{score}</p>
+            </div>
 
-        <Coin ref={coinRef}/>
-        <div className="buttons-box">
-            <CoinButton title={"Flip"} bgColor="#4f5d75" onClick={handleFlip}/>
-            <CoinButton title={"Stop"} bgColor="#c75146" onClick={handleStop} disabled={stopDisabled}/>
+            <Coin ref={coinRef}/>
+            <div className="buttons-box">
+                <CoinButton title={"Flip"} bgColor="#4f5d75" onClick={handleFlip}/>
+                <CoinButton title={"Stop"} bgColor="#c75146" onClick={handleStop} disabled={stopDisabled}/>
+            </div>
         </div>
-    </div>
+    );
 }

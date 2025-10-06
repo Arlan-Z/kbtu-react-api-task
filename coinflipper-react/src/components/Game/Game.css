@@ -11,12 +11,14 @@
     justify-content: space-between;
     flex-direction: row;
     width: 150px;
+    height: 90px;
 }
 
 .score-box h1 {
     color: #302b27;
     font-size: 32px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .score-box p {

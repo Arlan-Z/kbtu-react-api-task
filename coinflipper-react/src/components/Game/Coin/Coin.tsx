@@ -4,7 +4,7 @@ import Skull from "../../../assets/skull.png"
 import './Coin.css';
 
 const Coin = forwardRef((_, ref) => {
-    const [isWin, setIsWin] = useState(true);
+    const [isWin, setIsWin] = useState<boolean>(true);
 
     useImperativeHandle(ref, () => ({
         flipCoin: (isWin : boolean) => setIsWin(isWin)

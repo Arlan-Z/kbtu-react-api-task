@@ -16,17 +16,20 @@
 }
 
 .coin.win {
-    background-color: #ffc373;
-    border: 6px solid #ffa200;
+    background: radial-gradient(circle, #ffe194 0%, #ffc373 100%);
+    border: 8px solid #c58a00;
+    box-shadow: 0 0 20px #ffc373, inset 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .coin.lose {
-    background-color: #9999a1;
-    border: 6px solid #66666e;
+    background: radial-gradient(circle, #d1d5db 0%, #9999a1 100%);
+    border: 8px solid #5c5c5c;
+    box-shadow: 0 0 20px #9999a1, inset 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .coin img {
-    width: 72px;
-    opacity: 0.4;
+    width: 90px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+    opacity: 0.8;
 }
 
