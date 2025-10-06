@@ -18,4 +18,11 @@
 
 .records-title {
     text-transform: uppercase;
+    color: #e5e7eb;
+    letter-spacing: 4px;
+
+    text-shadow: 
+    0 0 5px rgba(229, 231, 235, 0.5),   
+    0 0 10px rgba(167, 139, 250, 0.4),  
+    0 0 20px rgba(125, 211, 252, 0.3); 
 }
