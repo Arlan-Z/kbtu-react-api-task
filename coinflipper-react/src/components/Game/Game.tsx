@@ -2,12 +2,13 @@ import { useRef, useState } from "react";
 import Coin, { type CoinHandle } from "./Coin/Coin";
 import CoinButton from "./Coin/CoinButton/CoinButton";
 import './Game.css';
-import { postRecord } from "../../services/RecordService";
+import { useRecords } from '../../contexts/RecordsContext';
 import type { ScoreRecord } from "../../models/record";
 
 export default function Game() {
     const coinRef = useRef<CoinHandle>(null);
     const [score, setScore] = useState<number>(0);
+    const { addRecord } = useRecords();
 
     const handleFlip = () => {
         const isWin = Math.random() > 0.5;
@@ -37,12 +38,8 @@ export default function Game() {
             }
         }
         
-        const record: ScoreRecord = {
-            name: name,
-            score: score
-        };
-
-        const isSuccess = await postRecord(record);
+        const record: ScoreRecord = { name, score };
+        const isSuccess = await addRecord(record);
 
         if (isSuccess) {
             alert('Record Saved!');
