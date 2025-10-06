@@ -2,18 +2,19 @@ const express = require('express');
 const app = express();
 
 const records = [
-    {
-        name: 'Arl',
-        score: 3
-    },
-    {
-        name: 'lan',
-        score: 2
-    },
-    {
-        name: 'gul',
-        score: 2
-    },
+    { name: 'Arl', score: 3 },
+    { name: 'lan', score: 2 },
+    { name: 'gul', score: 2 },
+    { name: 'Tom', score: 5 },
+    { name: 'Sar', score: 4 },
+    { name: 'Max', score: 6 },
+    { name: 'Lia', score: 1 },
+    { name: 'Ben', score: 7 },
+    { name: 'Nin', score: 3 },
+    { name: 'Ole', score: 8 },
+    { name: 'Kat', score: 10 },
+    { name: 'Dan', score: 9 },
+    { name: 'Ira', score: 4 },
 ];
 
 app.use(express.urlencoded({ extended: true }));

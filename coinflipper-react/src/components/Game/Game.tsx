@@ -8,6 +8,8 @@ import type { ScoreRecord } from "../../models/record";
 export default function Game() {
     const coinRef = useRef<CoinHandle>(null);
     const [score, setScore] = useState<number>(0);
+    const [stopDisabled, setStopDisabled] = useState<boolean>(true);
+
     const { addRecord } = useRecords();
 
     const handleFlip = () => {
@@ -17,8 +19,10 @@ export default function Game() {
 
         if (isWin) {
             setScore(prev => prev + 1);
+            setStopDisabled(false);
         } else {
             setScore(0);
+            setStopDisabled(true);
         }
     }
 
@@ -43,6 +47,7 @@ export default function Game() {
 
         if (isSuccess) {
             alert('Record Saved!');
+            setStopDisabled(true);
         } else {
             alert('Some error occured. Try again');
         }
@@ -57,7 +62,7 @@ export default function Game() {
         <Coin ref={coinRef}/>
         <div className="buttons-box">
             <CoinButton title={"Flip"} bgColor="#4f5d75" onClick={handleFlip}/>
-            <CoinButton title={"Stop"} bgColor="#c75146" onClick={handleStop}/>
+            <CoinButton title={"Stop"} bgColor="#c75146" onClick={handleStop} disabled={stopDisabled}/>
         </div>
     </div>
 }
