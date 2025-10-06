@@ -38,19 +38,18 @@ export default function Game() {
         let name = prompt('Enter your name');
 
         if (name === null) {
-            setScore(0);
             return;
         }
 
         while (name.trim().length !== 3) {
             name = prompt('Invalid username. Username must be 3 characters long');
             if (name === null) {
-                setScore(0);
                 return;
             }
         }
         
         const record: ScoreRecord = { name, score };
+        setScore(0);
         const isSuccess = await addRecord(record);
 
         if (isSuccess) {
