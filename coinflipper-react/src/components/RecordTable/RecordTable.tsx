@@ -2,7 +2,9 @@ import { getRecords } from "../../services/RecordService";
 import RecordRow from "./RecordRow/RecordRow";
 import './RecordTable.css';
 
-const records = await getRecords();
+const records = await getRecords().then((val) => {
+    return val.sort((a, b) => b.score - a.score);
+});
 
 export default function RecordTable() {
     return <div className="record-table-wrapper">
