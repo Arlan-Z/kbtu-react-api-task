@@ -5,8 +5,25 @@
 - Use css to display items neatly. Component list and component card css must have separate css applied  
 
 ## Screenshots
-### Code
+### Game Component Code
 ![code](./img/code.png)
 
 ### App
 ![coin](./img/main.png)
+
+## Setup
+### Clone Repo
+```
+git clone https://github.com/Arlan-Z/kbtu-react-api-task
+cd kbtu-react-api-task
+```
+
+### Install Packages
+```
+npm run install-all
+```
+
+### Start App
+```
+npm run dev
+```
