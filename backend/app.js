@@ -3,17 +3,17 @@ const app = express();
 
 const records = [
     { name: 'Arl', score: 1 },
-    { name: 'lan', score: 1 },
-    { name: 'gul', score: 1 },
+    { name: 'lan', score: 2 },
+    { name: 'gul', score: 3 },
     { name: 'Tom', score: 1 },
-    { name: 'Sar', score: 1 },
-    { name: 'Max', score: 1 },
+    { name: 'Sar', score: 2 },
+    { name: 'Max', score: 3 },
     { name: 'Lia', score: 1 },
-    { name: 'Ben', score: 1 },
-    { name: 'Nin', score: 1 },
+    { name: 'Ben', score: 2 },
+    { name: 'Nin', score: 3 },
     { name: 'Ole', score: 1 },
-    { name: 'Kat', score: 1 },
-    { name: 'Dan', score: 1 },
+    { name: 'Kat', score: 2 },
+    { name: 'Dan', score: 3 },
     { name: 'Ira', score: 1 },
 ];
 
