@@ -4,19 +4,23 @@ import CoinButton from "./Coin/CoinButton/CoinButton";
 import './Game.css';
 import { useRecords } from '../../contexts/RecordsContext';
 import type { ScoreRecord } from "../../models/record";
+import CoinFlipSound from "../../assets/coin-flip.mp3"
 
 export default function Game() {
     const coinRef = useRef<CoinHandle>(null);
     const [score, setScore] = useState<number>(0);
     const [stopDisabled, setStopDisabled] = useState<boolean>(true);
     const [flipDisabled, setflipDisabled] = useState<boolean>(false);
-
-
     const { addRecord } = useRecords();
+
+    const coinFlipSound = new Audio(CoinFlipSound);
+    coinFlipSound.volume = 0.25;
 
     const handleFlip = () => {
         const isWin = Math.random() > 0.5;
         coinRef.current?.flipCoin(isWin);
+
+        coinFlipSound.play();
 
         setflipDisabled(true);
         setStopDisabled(true);
