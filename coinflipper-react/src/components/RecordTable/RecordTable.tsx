@@ -34,7 +34,7 @@ export default function RecordTable() {
             <div className="records-box">
                 {displayedRecords.map((el, i) => (
                     <RecordRow 
-                        key={i} 
+                        key={el.name + el.score + i}
                         name={el.name} 
                         score={el.score} 
                         style={{ "--i": i } as React.CSSProperties} 
